@@ -8,6 +8,8 @@ public class Jump : MonoBehaviour
     public float jumpVel = 5;
 
     private Rigidbody2D rb;
+    private float fallMult = 2.5f;
+    private float lowJumpMult = 2f;
 
     void Start()
     {
@@ -16,9 +18,18 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
-		if (Input.GetButtonDown("Jump"))
-		{
+        if (Input.GetButtonDown("Jump"))
+        {
             rb.velocity = Vector2.up * jumpVel;
+        }
+
+        if(rb.velocity.y < 0)
+		{
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMult - 1) * Time.deltaTime;
 		}
+        else if(rb.velocity.y > 0 && !Input.GetButton("Jump"))
+		{
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMult - 1) * Time.deltaTime;
+        }
     }
 }
