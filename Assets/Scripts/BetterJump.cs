@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class BetterJump : MonoBehaviour
 {
-
     private Rigidbody2D rb;
-    private float fallMult = 2.5f;
-    private float lowJumpMult = 2f;
+    public float fallMultiplier = 4f;
+    public float lowJumpMultiplier = 7f;
 
     void Start()
     {
@@ -16,13 +15,13 @@ public class BetterJump : MonoBehaviour
 
     void Update()
     {
-        if (rb.velocity.y < 0)
+        if(rb.velocity.y < 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMult - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if(rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMult - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 }
