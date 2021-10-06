@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collision>();
+        canMove = true;
     }
 
     void Update()
@@ -88,11 +89,6 @@ public class Movement : MonoBehaviour
 
     private void WallJump()
     {
-        if ((side == 1 && coll.onRightWall) || side == -1 && !coll.onRightWall)
-        {
-            side *= -1;
-        }
-
         StopCoroutine(DisableMovement(0));
         StartCoroutine(DisableMovement(.1f));
 
@@ -112,6 +108,9 @@ public class Movement : MonoBehaviour
 
     private void WallSlide()
 	{
+        if (!canMove)
+           return;
+
         bool pushingWall = false;
         if ((rb.velocity.x > 0 && coll.onRightWall) || (rb.velocity.x < 0 && coll.onLeftWall))
         {
@@ -130,13 +129,16 @@ public class Movement : MonoBehaviour
 
     private void Walk(Vector2 dir)
 	{
-        if (!wallJumped)
+        if (!canMove)
+            return;
+
+        if (wallJumped)
         {
-            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
+            rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(dir.x * speed, rb.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
         else
         {
-            rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(dir.x * speed, rb.velocity.y)), wallJumpLerp * Time.deltaTime);
+            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
         }
     }
 }
