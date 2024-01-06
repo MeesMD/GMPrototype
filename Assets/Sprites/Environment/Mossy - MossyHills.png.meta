@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -484,6 +485,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Mossy - MossyHills_4: -4689919656177448304
+      Mossy - MossyHills_0: 3514928116938629718
+      Mossy - MossyHills_10: 3261154557777638673
+      Mossy - MossyHills_8: -6537579023907152598
+      Mossy - MossyHills_14: 4766652246236631741
+      Mossy - MossyHills_1: 9196199614169273764
+      Mossy - MossyHills_6: -8498703107324428600
+      Mossy - MossyHills_7: 7394200986258851590
+      Mossy - MossyHills_12: 1124233863920827125
+      Mossy - MossyHills_11: 2852847961221375986
+      Mossy - MossyHills_9: 3259294936216281307
+      Mossy - MossyHills_13: -3141060408815067699
+      Mossy - MossyHills_5: -5130691827375514457
+      Mossy - MossyHills_2: -3998603462432932004
+      Mossy - MossyHills_15: 4562951987272276446
+      Mossy - MossyHills_3: -6975029565482363027
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

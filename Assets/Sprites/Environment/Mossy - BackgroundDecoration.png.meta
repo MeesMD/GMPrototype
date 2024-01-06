@@ -213,6 +213,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1612,6 +1613,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Mossy - BackgroundDecoration_26: -6029410012778929337
+      Mossy - BackgroundDecoration_60: 1531973564421414871
+      Mossy - BackgroundDecoration_62: -2869134718580075126
+      Mossy - BackgroundDecoration_44: 6762625351855912550
+      Mossy - BackgroundDecoration_3: 3660132632875294079
+      Mossy - BackgroundDecoration_43: -3507623892877050703
+      Mossy - BackgroundDecoration_32: -5485538952868052220
+      Mossy - BackgroundDecoration_37: -2818555486739885178
+      Mossy - BackgroundDecoration_19: 3012285773280917752
+      Mossy - BackgroundDecoration_50: 3278288706408027264
+      Mossy - BackgroundDecoration_9: 4471100444394994765
+      Mossy - BackgroundDecoration_42: 6461832917521662761
+      Mossy - BackgroundDecoration_1: -7522072805114197072
+      Mossy - BackgroundDecoration_14: 801446949195516504
+      Mossy - BackgroundDecoration_20: 8734453271343794383
+      Mossy - BackgroundDecoration_59: 3020320482476456950
+      Mossy - BackgroundDecoration_21: -1058461458913433401
+      Mossy - BackgroundDecoration_25: 5908789037199094214
+      Mossy - BackgroundDecoration_38: -6176521694269298584
+      Mossy - BackgroundDecoration_35: 7074646248688251630
+      Mossy - BackgroundDecoration_22: 5707153073370316931
+      Mossy - BackgroundDecoration_6: -730436856212797230
+      Mossy - BackgroundDecoration_15: -6193704203994434346
+      Mossy - BackgroundDecoration_27: -5095653861503478071
+      Mossy - BackgroundDecoration_4: -6215869556700256215
+      Mossy - BackgroundDecoration_29: -1497369986048773138
+      Mossy - BackgroundDecoration_55: -5741724675855776593
+      Mossy - BackgroundDecoration_10: -1267564794048891414
+      Mossy - BackgroundDecoration_11: 6825633903504019156
+      Mossy - BackgroundDecoration_40: 2512726076265289078
+      Mossy - BackgroundDecoration_36: -1137210758596451464
+      Mossy - BackgroundDecoration_16: -1922306644087323574
+      Mossy - BackgroundDecoration_58: -4141909427628124542
+      Mossy - BackgroundDecoration_61: -4453425375125284647
+      Mossy - BackgroundDecoration_45: -3241646348460749167
+      Mossy - BackgroundDecoration_57: -4002922130248298570
+      Mossy - BackgroundDecoration_39: 7151471915671872250
+      Mossy - BackgroundDecoration_41: -1586992809394658428
+      Mossy - BackgroundDecoration_17: -8093934909600783156
+      Mossy - BackgroundDecoration_53: 3496628914154810231
+      Mossy - BackgroundDecoration_30: 7528961423027905725
+      Mossy - BackgroundDecoration_48: -3556296095136238498
+      Mossy - BackgroundDecoration_28: -6753262323546908817
+      Mossy - BackgroundDecoration_31: 6759965119331251478
+      Mossy - BackgroundDecoration_54: 1739437393329916152
+      Mossy - BackgroundDecoration_2: 1380579553542856557
+      Mossy - BackgroundDecoration_12: -1546699469071441219
+      Mossy - BackgroundDecoration_8: -2449380398559453523
+      Mossy - BackgroundDecoration_13: 472611090620016735
+      Mossy - BackgroundDecoration_34: -1846210275195927714
+      Mossy - BackgroundDecoration_24: 3795341626709292775
+      Mossy - BackgroundDecoration_52: -6089250139522825813
+      Mossy - BackgroundDecoration_56: 3078666303800120247
+      Mossy - BackgroundDecoration_49: 5413068353496737661
+      Mossy - BackgroundDecoration_23: 8042168729063198717
+      Mossy - BackgroundDecoration_18: 9211940645275536264
+      Mossy - BackgroundDecoration_51: 8676759715466364013
+      Mossy - BackgroundDecoration_5: -2410754012211790020
+      Mossy - BackgroundDecoration_46: -4082886917744819534
+      Mossy - BackgroundDecoration_47: -6691594810984423022
+      Mossy - BackgroundDecoration_33: 981166879708876026
+      Mossy - BackgroundDecoration_7: -7177992248958779001
+      Mossy - BackgroundDecoration_0: -3142856237357742515
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
