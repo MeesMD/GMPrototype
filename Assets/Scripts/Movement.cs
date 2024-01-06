@@ -13,13 +13,18 @@ public class Movement : MonoBehaviour
     public float jumpForce;
     public float slideSpeed = 5;
     public float wallJumpLerp = 10;
+    public float dashSpeed = 20;
 
     public bool canMove;
     public bool wallGrab;
     public bool wallSlide;
     public bool wallJumped;
+    public bool isDashing;
 
-    public int side = 1;
+    private bool groundTouch;
+    private bool hasDashed;
+
+    public ParticleSystem jumpParticle;
 
     void Start()
     {
@@ -32,6 +37,9 @@ public class Movement : MonoBehaviour
 	{
 		float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
+        float xRaw = Input.GetAxisRaw("Horizontal");
+        float yRaw = Input.GetAxisRaw("Vertical");
+
         Vector2 dir = new Vector2(x,y);
 
         Walk(dir);
@@ -85,6 +93,66 @@ public class Movement : MonoBehaviour
             if (coll.onWall && !coll.onGround)
                 WallJump();
         }
+
+        if (Input.GetButtonDown("Fire1") && !hasDashed)
+        {
+            if (xRaw != 0 || yRaw != 0)
+                Dash(xRaw, yRaw);
+        }
+
+        if (coll.onGround && !groundTouch)
+        {
+            GroundTouch();
+            groundTouch = true;
+        }
+
+        if (!coll.onGround && groundTouch)
+        {
+            groundTouch = false;
+        }
+    }
+
+    void GroundTouch()
+    {
+        hasDashed = false;
+        isDashing = false;
+
+        jumpParticle.Play();
+    }
+
+    private void Dash(float x, float y)
+    {
+        hasDashed = true;
+
+        rb.velocity = Vector2.zero;
+        Vector2 dir = new Vector2(x, y);
+
+        rb.velocity += dir.normalized * dashSpeed;
+        StartCoroutine(DashWait());
+    }
+
+    IEnumerator DashWait()
+    {
+        StartCoroutine(GroundDash());
+
+        rb.gravityScale = 0;
+        GetComponent<BetterJump>().enabled = false;
+        wallJumped = true;
+        isDashing = true;
+
+        yield return new WaitForSeconds(.3f);
+
+        rb.gravityScale = 3;
+        GetComponent<BetterJump>().enabled = true;
+        wallJumped = false;
+        isDashing = false;
+    }
+
+    IEnumerator GroundDash()
+    {
+        yield return new WaitForSeconds(.15f);
+        if (coll.onGround)
+            hasDashed = false;
     }
 
     private void WallJump()
