@@ -21,12 +21,12 @@ public class CraftBenchMajiger : MonoBehaviour
 
     void Update()
     {
-		if(gadgetPickupAmount == 1)
-		{
+        if (gadgetPickupAmount == 1)
+        {
             craftBenchTUTText.text = "Find 1      to craft gadget!";
-        } 
-        else if(gadgetPickupAmount == 2)
-		{
+        }
+        else if (gadgetPickupAmount == 2)
+        {
             craftBenchTUT.SetActive(false);
             mockBall.SetActive(false);
             pressE.SetActive(true);
@@ -38,9 +38,6 @@ public class CraftBenchMajiger : MonoBehaviour
                 gadgetTUT.SetActive(true);
             }
         }
-
-
-
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
