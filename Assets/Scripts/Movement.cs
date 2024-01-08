@@ -20,11 +20,13 @@ public class Movement : MonoBehaviour
     public bool wallSlide;
     public bool wallJumped;
     public bool isDashing;
+    public bool canDash = false;
 
     private bool groundTouch;
     private bool hasDashed;
 
     public ParticleSystem jumpParticle;
+    public ParticleSystem dashParticle;
 
     void Start()
     {
@@ -94,7 +96,7 @@ public class Movement : MonoBehaviour
                 WallJump();
         }
 
-        if (Input.GetButtonDown("Fire1") && !hasDashed)
+        if (Input.GetButtonDown("Fire1") && !hasDashed && canDash)
         {
             if (xRaw != 0 || yRaw != 0)
                 Dash(xRaw, yRaw);
@@ -123,6 +125,7 @@ public class Movement : MonoBehaviour
     private void Dash(float x, float y)
     {
         hasDashed = true;
+        dashParticle.Play();
 
         rb.velocity = Vector2.zero;
         Vector2 dir = new Vector2(x, y);
@@ -191,6 +194,7 @@ public class Movement : MonoBehaviour
 
     private void Jump(Vector2 dir)
 	{
+        jumpParticle.Play();
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += dir * jumpForce;
     }
